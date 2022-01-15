@@ -2,7 +2,8 @@
 
 
 body{
-    background-color: #eecfd4;
+    margin: 0;
+    background-color: rgba(240,154,74,255);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -18,7 +19,10 @@ header{
     width: 50%;
     padding-left: 5%;
 }
-.link-button{
+.link-button {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&family=The+Nautigal:wght@700&display=swap');
+    font-family: 'Poppins', sans-serif;
+    font-family: 'The Nautigal', cursive;
     text-decoration: none;
     background-image: linear-gradient(orange,tomato);
     padding: 10px 40px;
@@ -28,7 +32,7 @@ header{
 
 }
 
-.flexible-container{
+.tops{
     display: flex;
 }
 
@@ -37,21 +41,34 @@ hr{
 }
 
 .product .product-img img{
-    width: 224px;
-    height: 104px;
+    width: 395px;
+}
+
+.product .product-img:hover img{
+    transform: scale(1.2);
+    transition: transform 2s;
+    
+    
+   
 }
 footer{
     background-color: rgb(10,8,38);
     color: white;
     text-align: center;
+    width: 100%;
+    margin: 0;
 }
 .product{
-    width:329px;
-    height:476px;
+    width:400px;
+    height:576px;
     margin-left: 30px;
     margin-top: 30px;
     padding: 10px;
     box-shadow: 5px 10px 18px #888888;
+    background-color: #eecfd4;
+    overflow: hidden;
+    
+    
 }
 .products{
     display: grid;
@@ -65,9 +82,74 @@ footer{
     font-size: 12px;
 }
 .fa-star.filled{
-    color: yellow;
+    color: rgba(240,154,74,255);
 }
 .fa-star.empty{
     color: thistle;
 }
 span{margin: 13px;}
+#id{
+    display: grid;
+}
+.right{
+    text-align: right;
+    background-image: linear-gradient(orange,tomato);
+    
+    margin-left: 95%;
+    font-weight: 700;
+    border-radius: 5px;
+    color: white;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500&family=The+Nautigal:wght@700&display=swap');
+    font-family: 'Poppins', sans-serif;
+    font-family: 'The Nautigal', cursive;
+}
+
+.link-button .fas{
+    margin: 12px;
+}
+
+@media only screen and (max-width:320px){
+    .flexible-container{
+        width: 100%;
+        
+
+    }
+    
+    .products,.product-detail{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .product{
+        flex-direction: column;
+    }
+    footer{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width : 768px){
+    .Container{
+        width: 100%;
+    }
+    .products,.product-detail{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .product{
+        flex-direction: column;
+    }
+    footer{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width : 1400px){
+    .Container{
+        width: 100%;
+    }
+    .products,.product-detail{
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+    footer{
+        width: 100%;
+    }
+}
